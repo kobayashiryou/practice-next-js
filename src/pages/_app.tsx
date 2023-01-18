@@ -1,3 +1,7 @@
+import type { AppProps } from 'next/app'
+import { createGlobalStyle } from 'styled-components'
+
+const GrobalStyle = createGlobalStyle`
 html,
 body {
   padding: 0;
@@ -24,3 +28,15 @@ a {
     background: black;
   }
 }
+`
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <GrobalStyle />
+      <Component {...pageProps} />
+    </>
+  )
+}
+
+export default MyApp
