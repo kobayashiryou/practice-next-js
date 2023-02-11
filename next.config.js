@@ -2,9 +2,18 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  compiler: {
+  compiler: (() => {
+    let compilerConfig = {
       styledComponents: true,
-  },
+    }
+    if (process.env.NODE_ENV === 'production') {
+      compilerConfig = {
+        reactRemoveProperties: { propeties: ['^data-testid$'] },
+      }
+    }
+
+    return compilerConfig
+  })(),
 }
 
 module.exports = nextConfig
