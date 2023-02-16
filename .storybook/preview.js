@@ -49,8 +49,3 @@ Object.defineProperty(NextImage, 'default', {
     <OriginalNextImage {...props} unoptimized />
   ),
 })
-
-Object.defineProperty(NextImage, '__esModule', {
-  configurable: true,
-  value: true,
-})
